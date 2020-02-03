@@ -7,14 +7,12 @@
     android:orientation="vertical"
     tools:context="com.darkknight.simpleanimation.MainActivity">
 
-
-    <com.darkknight.simpleanimation.MyCustomRecycler
+    <com.darkknight.simpleanimation.kotlin.CircularRecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorAccent"
-        android:overScrollMode="never" />
+        android:background="@color/colorAccent" />
 
     <TextView
         android:id="@+id/tv1"

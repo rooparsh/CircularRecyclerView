@@ -3,10 +3,13 @@ package com.darkknight.simpleanimation;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.graphics.Rect;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 
-import android.support.v7.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
 import android.util.Log;
 import android.view.View;
 
@@ -14,6 +17,9 @@ import android.view.ViewTreeObserver;
 
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.darkknight.simpleanimation.kotlin.CircularHorizontalMode;
+import com.darkknight.simpleanimation.kotlin.CircularRecyclerView;
 
 
 public class MainActivity extends AppCompatActivity implements ViewTreeObserver.OnGlobalLayoutListener, onItemClickListener {
@@ -33,9 +39,9 @@ public class MainActivity extends AppCompatActivity implements ViewTreeObserver.
         tv3 = findViewById(R.id.tv3);
         tv4 = findViewById(R.id.tv4);
 
-        MyCustomRecycler myCustomRecycler = findViewById(R.id.recycler);
+        CircularRecyclerView myCustomRecycler = findViewById(R.id.recycler);
         myCustomRecycler.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
-        myCustomRecycler.setViewMode(new CircularHorizontalMode(500, 1.0f / 180.0f * (float) Math.PI, 0.0001f, 0.15f));
+        myCustomRecycler.setViewMode(new CircularHorizontalMode());
         myCustomRecycler.setAdapter(new CustomAdapter(this));
 
         layout = findViewById(R.id.layout);
